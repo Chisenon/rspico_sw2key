@@ -1,12 +1,33 @@
-[build]
-target = "thumbv6m-none-eabi"
+# # elf2uf2-rsでやるならこっち！(lchika、serial_textのみ動作確認済み)
 
-[target.thumbv6m-none-eabi]
+#################################
+# [build]
+# target = "thumbv6m-none-eabi"
+
+# [target.thumbv6m-none-eabi]
+# rustflags = [
+#     "-C", "link-arg=--nmagic",
+#     "-C", "link-arg=-Tlink.x",
+#     "-C", "inline-threshold=5",
+#     "-C", "no-vectorize-loops",
+# ]
+# runner = "elf2uf2-rs -d -s"
+#################################
+
+
+# probe-rsでやるならこっち！(hello、rp_keysのみ動作確認済み)
+#################################
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+
+runner = "probe-rs run --chip RP2040"
+
 rustflags = [
-    "-C", "link-arg=--nmagic",
-    "-C", "link-arg=-Tlink.x",
-    "-C", "inline-threshold=5",
-    "-C", "no-vectorize-loops",
+  "-C", "linker=flip-link",
+  "-C", "link-arg=-Tlink.x",
+  "-C", "link-arg=-Tdefmt.x",
+  "-C", "link-arg=--nmagic",
 ]
 
-runner = "elf2uf2-rs -d -s"
+[build]
+target = "thumbv6m-none-eabi"
+#################################

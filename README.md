@@ -2,8 +2,17 @@
 
 これでコンパイルしる
 
-> cargo run --release --bin main
+# rp_key 実際に動作するもの
+#
+> cargo run --release --bin rp_key
 
-とか
 
-> cargo run --release --bin serial_text
+# lchika と serial_text はelf2uf2-rsで動く
+# 
+
+> cargo run --release --bin lchika
+
+
+# 参考
+
+・ https://github.com/KOBA789/rusty-keys
