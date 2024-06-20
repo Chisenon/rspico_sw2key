@@ -1,18 +1,32 @@
 # rspico_sw2key
 
-これでコンパイルしる
+rspico_sw2key は [RustyKeys](https://github.com/KOBA789/rusty-keys) を参考にし作成した自作キーボードのファームウェアです。
 
-# rp_key 実際に動作するもの
-#
-> cargo run --release --bin rp_key
+## 必要なもの (ハードウェア)
+- Raspberry Pi Pico (main基板[ピンヘッダ実装済みのほうが楽])
+- Raspberry Pi Pico (debug probe用[ピンヘッダ欲しい])
+- タクトスイッチ (お好きなもの)
+- ジャンパ線 (無限)
+- ファストン端子 (無限)
+- 熱収縮チューブ (無限)
 
+## 環境開発 (Win)
+下記と同じ方法で作成できる！！！<br>
 
-# lchika と serial_text はelf2uf2-rsで動く
-# 
+https://rusty-keys.koba789.com/
 
-> cargo run --release --bin lchika
+## 入ってるもの
+- hello.rs (Hello Worldします。)
+- lchika.rs (Lチカします)
+- serial_text.rs (シリアル通信でコンソールに文字列を出します) 
+- __rp_key.rs (コレ、キーボード本体です)__
 
+## 実行
+
+``` console
+$ cargo run --release --bin rp_key
+```
 
 # 参考
-
-・ https://github.com/KOBA789/rusty-keys
+とても参考になりました！ありがとうございます。<br>
+- https://github.com/KOBA789/rusty-keys
