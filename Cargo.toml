@@ -16,7 +16,7 @@ rp-pico = "0.9.0"
 usb-device = "0.3.2"
 usbd-hid = "0.7.0"
 
-# 1.0.0 はまだ調べてないから置き換えられてない
+# 1.0.0 はあまり調べてない...
 embedded-hal = "0.2.7"
 embedded-time = "0.12.1"
 
@@ -36,15 +36,15 @@ ufmt = "0.2.0"
 
 [[bin]]
 name = "lchika"
-path = "src/lchika.rs"
+path = "other/lchika.rs"
 
 [[bin]]
 name = "serial_text"
-path = "src/serial_text.rs"
+path = "other/serial_text.rs"
 
 [[bin]]
 name = "hello"
-path = "src/hello.rs"
+path = "other/hello.rs"
 
 [[bin]]
 name = "rp_key"
